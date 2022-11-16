@@ -13,7 +13,7 @@ env:
   CLIENT_DIRECTORY: ./client
   API_DIRECTORY: ./api
   IAC_DIRECTORY: ./iac
-  RESOURCE_GROUP: Web3DevOps-${{ github.event.repository.name }}
+  RESOURCE_GROUP: Web3DevOps-${{ github.event.repository.name }}-${{ github.ref_name }}
 
 jobs:
   build:
@@ -231,6 +231,7 @@ jobs:
             Ganache IP: [http://${{ env.ganacheIp }}:8545](http://${{ env.ganacheIp }}:8545)
             Ganache FQDN: [http://${{ env.ganacheFqdn }}:8545](http://${{ env.ganacheFqdn }}:8545)
             Network ID: ${{ env.networkId }}
+            Chain ID: ${{ env.chainId }}
             Contract Address: ${{ env.contractAddress }}
             ### Account Information
             Address: $address
