@@ -14,7 +14,7 @@ env:
   CLIENT_DIRECTORY: ./client
   API_DIRECTORY: ./api
   IAC_DIRECTORY: ./iac
-  RESOURCE_GROUP: Web3DevOps-${{ github.event.repository.name }}-${{ github.ref_name }}
+  RESOURCE_GROUP: Web3DevOps-${{ github.event.repository.name }}-${{ github.run_id }}
 
 jobs:
   build:
