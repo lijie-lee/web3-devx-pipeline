@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feat/implement_validation_job_by_manual_approval
   pull_request:
     branches:
       - main
