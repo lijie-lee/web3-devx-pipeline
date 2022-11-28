@@ -250,8 +250,8 @@ jobs:
       - name: Wait for external validation
         uses: trstringer/manual-approval@v1
         with:
-          secret: $${{ github.TOKEN }}
-          approvers: $${{ env.DEV_VALIDATION_APPROVERS }}
+          secret: ${{ github.TOKEN }}
+          approvers: ${{ env.DEV_VALIDATION_APPROVERS }}
           issue-title: Check DApp and then delete the resource group
           minimum-approvals: 1
 
@@ -388,8 +388,8 @@ jobs:
       - name: Wait for external validation
         uses: trstringer/manual-approval@v1
         with:
-          secret: $${{ github.TOKEN }}
-          approvers: $${{ env.QA_VALIDATION_APPROVERS }}
+          secret: ${{ github.TOKEN }}
+          approvers: ${{ env.QA_VALIDATION_APPROVERS }}
           issue-title: Check DApp and then delete the resource group
           minimum-approvals: 1
 
