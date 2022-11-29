@@ -246,25 +246,27 @@ jobs:
     runs-on: ubuntu-latest
     needs: dev
     steps:
-      - name: Wait for external validation
-        uses: trstringer/manual-approval@v1
-        with:
-          secret: ${{ github.TOKEN }}
-          approvers: ${{ env.DEV_VALIDATION_APPROVERS }}
-          issue-title: Check DApp and then delete the resource group
-          minimum-approvals: 1
+      - name: demo
+        run: echo "won't remove resources for demo"
+      # - name: Wait for external validation
+      #   uses: trstringer/manual-approval@v1
+      #   with:
+      #     secret: ${{ github.TOKEN }}
+      #     approvers: ${{ env.DEV_VALIDATION_APPROVERS }}
+      #     issue-title: Check DApp and then delete the resource group
+      #     minimum-approvals: 1
 
-      - name: Login Azure
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-          enable-AzPSSession: true 
-      - name: Delete DEV resource group
-        uses: azure/powershell@v1
-        with:
-          azPSVersion: "latest"
-          inlineScript: |
-            az group delete --name ${{ env.RESOURCE_GROUP }}-dev --yes --no-wait
+      # - name: Login Azure
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+      #     enable-AzPSSession: true 
+      # - name: Delete DEV resource group
+      #   uses: azure/powershell@v1
+      #   with:
+      #     azPSVersion: "latest"
+      #     inlineScript: |
+      #       az group delete --name ${{ env.RESOURCE_GROUP }}-dev --yes --no-wait
   
   qa:
     runs-on: ubuntu-latest
@@ -384,25 +386,27 @@ jobs:
     runs-on: ubuntu-latest
     needs: qa
     steps:
-      - name: Wait for external validation
-        uses: trstringer/manual-approval@v1
-        with:
-          secret: ${{ github.TOKEN }}
-          approvers: ${{ env.QA_VALIDATION_APPROVERS }}
-          issue-title: Check DApp and then delete the resource group
-          minimum-approvals: 1
+      - name: demo
+        run: echo "won't remove resources for demo"
+      # - name: Wait for external validation
+      #   uses: trstringer/manual-approval@v1
+      #   with:
+      #     secret: ${{ github.TOKEN }}
+      #     approvers: ${{ env.QA_VALIDATION_APPROVERS }}
+      #     issue-title: Check DApp and then delete the resource group
+      #     minimum-approvals: 1
 
-      - name: Login Azure
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-          enable-AzPSSession: true 
-      - name: Delete QA resource group
-        uses: azure/powershell@v1
-        with:
-          azPSVersion: "latest"
-          inlineScript: |
-            az group delete --name ${{ env.RESOURCE_GROUP }}-qa --yes --no-wait
+      # - name: Login Azure
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+      #     enable-AzPSSession: true 
+      # - name: Delete QA resource group
+      #   uses: azure/powershell@v1
+      #   with:
+      #     azPSVersion: "latest"
+      #     inlineScript: |
+      #       az group delete --name ${{ env.RESOURCE_GROUP }}-qa --yes --no-wait
     
   prod:
     runs-on: ubuntu-latest
