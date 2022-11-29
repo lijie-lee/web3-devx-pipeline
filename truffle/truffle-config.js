@@ -18,8 +18,7 @@
  *
  */
 
-const path = require("path");
-var devNetworkHost = process.env["DEV_NETWORK"];
+var devNetworkHost = process.env["DEV_NETWORK"] || "127.0.0.1";
 var apiKey = process.env["API_KEY"];
 var mnemonic = process.env["MNEMONIC"];
 var HDWalletProvider = require('@truffle/hdwallet-provider');
