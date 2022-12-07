@@ -155,7 +155,7 @@ jobs:
 
             # Check if ganache is connectable
             $threshold = 10
-            $isConnectable = False
+            $isConnectable = $false
             $Ip = env.ganacheIp
             $Port = 8545
             while ( $threshold -gt 0 )
