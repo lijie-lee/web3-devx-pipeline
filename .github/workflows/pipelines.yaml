@@ -130,7 +130,7 @@ jobs:
           azPSVersion: "latest"
           inlineScript: |
             Set-Location .\iac
-            .\deploy.ps1 -rgName ${{ env.RESOURCE_GROUP }}-dev -fqdn ${{ env.RESOURCE_GROUP }}-${{ github.run_number }}-dev -repoUrl ${{ github.server_url }}/${{ github.repository }} -deployGanache -verbose
+            .\deploy.ps1 -rgName ${{ env.RESOURCE_GROUP }}-dev -fqdn ${{ env.RESOURCE_GROUP }}-${{ github.sha }}-dev -repoUrl ${{ github.server_url }}/${{ github.repository }} -deployGanache -verbose
             Set-Location ..
 
       # deploy contracts
