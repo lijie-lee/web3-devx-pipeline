@@ -160,7 +160,7 @@ jobs:
             $Port = 8545
             while ( $threshold -gt 0 )
             {   
-                $isConnectable = [bool](Test-NetConnection -ComputerName $Ip -Port $Port -InformationLevel Quiet)
+                $isConnectable = [bool](Test-Connection -ComputerName $Ip -TcpPort $Port)
                 if ( $isConnectable ) {
                     Write-Host "Connect to $Ip`:$Port sucessfully!"
                     Break
